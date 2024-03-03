@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 170%;
+    padding: 0.5em 2em;
+    background-color: black;
+}
+
+header ul{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header img{
+    height: 3em;
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+}
+
+header a:hover{
+    color: rgb(76, 202, 244);
+}
+
+header button{
+    width: 140px;
+    height: 60px;
+    font-size: 1em;
+    background-color: white;
+    cursor: pointer;
+}
+
+header button:hover{
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+/* CONTAINER */
+.container{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.container .left{
+    width: 42%;
+}
+
+.container .left img{
+    width: 100%;
+}
+
+.container .right{
+    width: 40%;
+    font-size: 140%;
+    padding: 5%;
+    margin: 3%;
+    margin-right: 5em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.container .right h1{
+    font-size: 280%;
+    padding-bottom: 2%;
+}
+
+/* PDF To Audio Conversion */
+.audio-convert{
+    background-color: black;
+    color: white;
+    display: flex;
+}
+
+.audio-convert form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    font-size: 200%;
+}
+
+.audio-convert form input{
+    font-size: 80%;
+    margin: 3% 0 0 22%;
+}
+
+.audio-convert form button{
+    width: 35%;
+    height: 12%;
+    font-size: 100%;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.audio-convert form button:hover{
+    background-color: rgb(46, 45, 45);
+    color: white;
+    box-shadow: 5px 5px 5px white, -5px -5px 5px white, -5px 5px 5px white, 5px -5px 5px white;
+}
+
+.audio-convert form a{
+    color: black;
+}
+
+.audio-convert form a:hover{
+    color: white;
+}
+
+.audio-convert div{
+    width: 50%;
+    border: 1px solid white;
+}
+
+.audio-convert div .desc1{
+    margin: 10% 25%;
+    padding: 5%;
+    border: 1px solid white;
+    text-align: center;
+    font-size: 375%;
+}
+
+/* English To Hindi Conversion */
+.outer{
+    background-color: rgb(46, 45, 45);
+    padding: 3.5%;
+}
+
+.hindi-convert{
+    background-color: white;
+    color: black;
+    display: flex;
+}
+
+.hindi-convert form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    font-size: 200%;
+}
+
+.hindi-convert form input{
+    font-size: 80%;
+    margin: 3% 0 0 22%;
+}
+
+.hindi-convert form button{
+    width: 50%;
+    height: 12%;
+    font-size: 100%;
+    margin-top: 5%;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.hindi-convert form button:hover{
+    background-color: rgb(240, 236, 236);
+    color: black;
+    box-shadow: 5px 5px 5px black, -5px -5px 5px black, -5px 5px 5px black, 5px -5px 5px black;
+}
+
+.hindi-convert form a{
+    color: white;
+}
+
+.hindi-convert form a:hover{
+    color: black;
+}
+
+.hindi-convert div{
+    width: 50%;
+    border: 1px solid black;
+}
+
+.hindi-convert div .desc1{
+    width: 60%;
+    margin: 10% 20%;
+    padding: 5%;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 375%;
+}
+
+/* Footer */
+footer{
+    background-color: black;
+    color: white;
+    font-size: 110%;
+    padding: 2% 3%;
+}
+
+footer .icons{
+    font-size: 200%;
+    width: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1% 0 1% 5%;
+}
+
+footer .icons i{
+    cursor: pointer;
+}
+
+/* Messages */
+.success{
+    background-color: rgb(141, 227, 168);
+    font-size: x-large;
+    border: none;
+    border-radius: 5px;
+    height: 45px;
+    color: black;
+    padding: 0.5% 2%;
+}
+
+.error{
+    background-color: rgb(242, 134, 132);
+    font-size: x-large;
+    border: none;
+    height: 45px;
+    color: black;
+    padding: 0.5% 2%;
+}
+
+.close-message {
+    float: right;
+    cursor: pointer;
+}

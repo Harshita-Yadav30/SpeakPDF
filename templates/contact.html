@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c8ffd88059.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/contact.css">
+    <title>SpeakPDF</title>
+</head>
+<body>
+    <header>
+        <img src="../static/logo.jpg" alt="Logo">
+
+        <ul>
+            <a href="{% url 'home' %}">Convert</a>
+            <a href="{% url 'feedback' %}">Feedback</a>
+            <a href="{% url 'contact' %}" style="color: rgb(76, 202, 244); text-decoration: underline;">Contact Us</a>
+        </ul>
+
+        {% if user %}
+        <div class="buttons">
+            <p style="color: white;">Logged In as {{ user }}</p>
+            <button onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+        </div>
+        {% else %}
+        <div class="buttons">
+            <button onclick="window.location.href='{% url 'login' %}'">Sign In</button>
+            <button onclick="window.location.href='{% url 'register' %}'">Sign Up</button>
+        </div>
+        {% endif %}
+    </header>
+
+    <div class="box">
+        <h1 style="font-size: 50px; text-align: center; margin-top: 5%; margin-bottom: 35px;">Contact Us</h1>
+        <big>If you have any query or would like to help us in enhancing user experience by providing us with some cool suggestions, you can reach out to our team at</big>
+        <p style="padding-top: 25px; font-size: 25px;"><b>E-Mail:</b> watermapverify@gmail.com</p>
+        <p style="font-size: 25px;"><b>Phone:</b> (+91)-XXXXXXXXXX</p>
+    </div>
+
+    <footer>
+        <big>Connect with us through</big>
+        <div class="icons">
+            <i class="fa-brands fa-square-twitter"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-square-facebook"></i>
+        </div>
+        <pre style="text-align: end;">Copyright © [2024] SpeakPDF Team. All rights reserved.</pre>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c8ffd88059.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/home.css">
+    <title>SpeakPDF</title>
+</head>
+<body>
+    <header>
+        <img src="../static/logo.jpg" alt="Logo">
+
+        <ul>
+            <a href="{% url 'home' %}" style="color: rgb(76, 202, 244); text-decoration: underline;">Convert</a>
+            <a href="{% url 'feedback' %}">Feedback</a>
+            <a href="{% url 'contact' %}">Contact Us</a>
+        </ul>
+
+        {% if user %}
+        <div class="buttons">
+            <p style="color: white;">Logged In as {{ user }}</p>
+            <button onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+        </div>
+        {% else %}
+        <div class="buttons">
+            <button onclick="window.location.href='{% url 'login' %}'">Sign In</button>
+            <button onclick="window.location.href='{% url 'register' %}'">Sign Up</button>
+        </div>
+        {% endif %}
+    </header>
+    
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                    {{ message }}
+                    <span class="close-message" onclick="this.parentElement.style.display='none';">&times;</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <div class="container">
+        <div class="left">
+            <img src="../static/speak.jpg" alt="Speak Up Image">
+        </div>
+        <div class="right">
+            <h1>SpeakPDF</h1>
+            <big>SpeakPDF is a tool which helps people in converting contents of a PDF into an audio file with high efficiency. This tool also provides an option to translate the contents of a PDF from English to Hindi and the output will be stored in an audio file, which can be downloaded by the user.</big>
+        </div>
+    </div>
+
+    {% load static %}
+    <div class="audio-convert">
+        <form action="audio" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Upload PDF here</h2>
+            <input type="file" name="file" required>
+
+            <button type="submit">Convert To Audio</button>
+            {% if Asuccess %}
+                <button><a href="{{ audio }}" download="{{ file }}" style="text-decoration: none;">Download</a></button>
+            {% endif %}
+        </form>
+        <div>
+            <div class="desc1">
+                Convert Your PDFs to Audio Files
+            </div>
+        </div>
+    </div>
+
+    <div class="outer">
+        <div class="hindi-convert">
+            <div>
+                <div class="desc1">
+                    Convert Your English PDFs to Hindi Audio Files
+                </div>
+            </div>
+            <form action="language" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h2>Upload PDF here</h2>
+                <input type="file" name="file" required>
+
+                <button type="submit">Convert To Hindi Audio</button>
+
+                {% if Lsuccess %}
+                    <button><a href="{{ langAudio }}" download="{{ langFile }}" style="text-decoration: none;">Download</a></button>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <big>Connect with us through</big>
+        <div class="icons">
+            <i class="fa-brands fa-square-twitter"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-square-facebook"></i>
+        </div>
+        <pre style="text-align: end;">Copyright © [2024] SpeakPDF Team. All rights reserved.</pre>
+    </footer>
+</body>
+</html>
